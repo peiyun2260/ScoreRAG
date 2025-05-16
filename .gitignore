@@ -1,0 +1,40 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.env
+.venv/
+.env.*
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# uv / pip virtualenv
+.uv/
+
+# ChromaDB & model storage
+backend/storage/
+
+# === Node / React ===
+frontend/node_modules/
+frontend/.env
+frontend/dist/
+frontend/.vite/
+frontend/.DS_Store
+
+# === OS & Editor ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# === Test artifacts ===
+coverage/
+htmlcov/
+*.cover
+*.log
+*.tmp
