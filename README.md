@@ -30,7 +30,7 @@ ScoreRAG/
 │   └── sample_output/        # Real example outputs (for frontend demo)
 ├── frontend/                 # React + Vite frontend
 │   └── public/sample_output.json
-├── .env.example              # Environment variable template
+├── .env.template             # Environment variable template
 ├── pyproject.toml            # Dependency management (uv-compatible)
 ├── Makefile                  # Unified dev commands
 └── README.md
@@ -53,7 +53,7 @@ ScoreRAG/
 ### 🐍 Backend (FastAPI)
 
 ```bash
-make dev-env       # Create .env from .env.example
+make dev-env       # Create .env from .env.template
 uv venv && source .venv/bin/activate
 uv pip install -r pyproject.toml
 
@@ -93,7 +93,7 @@ PYTHONPATH=. pytest backend/tests/test_news_router.py
 
 ## 📦 Environment Variables
 
-See `.env.example` for required variables:
+See `.env.template` for required variables:
 
 ```env
 openai_api_key=sk-...
