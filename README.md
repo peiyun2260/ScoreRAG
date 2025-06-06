@@ -1,5 +1,7 @@
 # 📰 ScoreRAG — A Retrieval-Augmented Generation Framework with Consistency-Relevance Scoring and Structured Summarization for News Generation
 
+📄 _Associated research paper available on arXiv: [arXiv:2506.03704](https://arxiv.org/abs/2506.03704)_
+
 **ScoreRAG** is a pipeline that combines retrieval, semantic scoring, and LLM-based summarization to generate high-quality news reports. It retrieves relevant historical news articles, re-ranks them based on relevance to a user-defined query, and composes a coherent summary and full-length report.
 
 ---
