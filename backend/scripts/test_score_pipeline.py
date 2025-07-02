@@ -14,7 +14,7 @@ Example:
 """
 
 from backend.app.db.chroma_connector import get_chroma_db, query_chroma
-from backend.app.services.CoT_service import score_articles_with_consistency
+from backend.app.services.CoT_service import score_articles_with_thread_pool
 from backend.app.services.generation_service import generated_news_with_CoT
 from backend.app.db.mongo_connector import get_full_article
 
@@ -23,7 +23,7 @@ db = get_chroma_db()
 
 # Define search query and retrieve similar documents
 query = "馬斯克訪華"
-docs = query_chroma(query, k=5)  # Get top 5 most similar articles
+docs = query_chroma(db, query=query, k=5)  # Get top 5 most similar articles
 print(f"找到 {len(docs)} 篇相關文章")
 
 # Retrieve full article content from MongoDB
@@ -37,7 +37,7 @@ print(f"成功獲取 {len(full_articles)} 篇完整文章")
 # 1. Evaluate relevance of each article
 # 2. Generate summaries based on relevance scores
 # 3. Sort articles by score
-results = score_articles_with_consistency(full_articles, query)
+results = score_articles_with_thread_pool(full_articles, query)
 print(f"完成評分，共有 {len(results)} 篇文章通過評分標準")
 
 # Display individual article results with titles, scores, and generated summaries
